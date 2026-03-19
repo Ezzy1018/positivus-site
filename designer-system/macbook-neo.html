@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MacBook Neo - Apple (Clone)</title>
+  
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/components.css">
+  
+  <style>
+    :root {
+      /* Apple specific layout overrides */
+      --page-bg: #000;
+      --text-main: #f5f5f7;
+      --text-muted: #86868b;
+      --glass-bg: rgba(25, 25, 26, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
+    
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: var(--page-bg);
+      color: var(--text-main);
+      font-family: var(--ios-font-family);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, p { margin: 0; padding: 0; }
+    
+    .typography-hero {
+      font-size: 80px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      line-height: 1.05;
+    }
+    @media (min-width: 1068px) { .typography-hero { font-size: 104px; } }
+    
+    .typography-super {
+      font-size: 56px;
+      font-weight: 600;
+      letter-spacing: -0.005em;
+      line-height: 1.07;
+    }
+    @media (min-width: 1068px) { .typography-super { font-size: 80px; } }
+
+    .typography-headline {
+      font-size: var(--ios-size-title1);
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .typography-body {
+      font-size: var(--ios-size-body);
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-1 { transition-delay: 0.2s; }
+    .delay-2 { transition-delay: 0.4s; }
+
+    /* GLOBAL NAV */
+    .apple-nav {
+      position: sticky;
+      top: 0; left: 0; right: 0;
+      height: 44px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      z-index: 9999;
+      font-size: 12px;
+      font-weight: 400;
+      color: #E8E8ED;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .apple-nav span { cursor: pointer; opacity: 0.8; transition: opacity 0.3s; }
+    .apple-nav span:hover { opacity: 1; }
+
+    /* LOCAL NAV */
+    .local-nav {
+      position: sticky;
+      top: 44px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      height: 52px;
+      z-index: 9998;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 max(20px, calc((100vw - 980px) / 2));
+    }
+    .local-nav-title {
+      font-size: var(--ios-size-title3);
+      font-weight: 600;
+    }
+    
+    /* HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 10vh;
+      position: relative;
+    }
+    .hero-content {
+      text-align: center;
+      z-index: 10;
+    }
+    
+    .hero-gradient-text {
+      background: linear-gradient(180deg, #fff 0%, #a4a4ac 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .hero-sub {
+      margin-top: 20px;
+      color: #86868b;
+      font-size: var(--ios-size-title2);
+      font-weight: 500;
+    }
+
+    /* CINEMATIC LAPTOP (Using High-Res Image) */
+    .hero-device-wrapper {
+      margin-top: -40px;
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: center;
+      z-index: 1;
+    }
+    .hero-device-wrapper img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0px 30px 60px rgba(0, 122, 255, 0.15));
+    }
+
+    /* SECTION: COLORS (GLASSMORPHISM) */
+    .section-colors {
+      padding: 120px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .colors-sub {
+      font-size: var(--ios-size-title2);
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+    
+    .color-showcase {
+      margin-top: 80px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .color-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .color-sphere {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      position: relative;
+      background: #000;
+      box-shadow: 
+        inset -10px -10px 20px rgba(0,0,0,0.5), 
+        inset 10px 10px 20px rgba(255,255,255,0.4),
+        0 20px 40px rgba(0,0,0,0.5);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .color-node:hover .color-sphere { transform: scale(1.1) translateY(-10px); }
+    
+    /* Specific Color Gradients modeling Apple finishes */
+    .sphere-silver { background: radial-gradient(circle at 30% 30%, #e8e8ed, #86868b); }
+    .sphere-blush  { background: radial-gradient(circle at 30% 30%, #f9e5e3, #c9938f); }
+    .sphere-citrus { background: radial-gradient(circle at 30% 30%, #fdf2d0, #bba351); }
+    .sphere-indigo { background: radial-gradient(circle at 30% 30%, #47546e, #1d2331); }
+
+    /* BENTO GRID - EXCEPTIONAL GLASSMORPHISM */
+    .section-bento {
+      padding: 80px 20px 160px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 24px;
+      auto-rows: minmax(300px, auto);
+    }
+
+    .bento-card {
+      background: var(--glass-bg);
+      border-radius: 32px;
+      border: 1px solid var(--glass-border);
+      overflow: hidden;
+      position: relative;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      backdrop-filter: saturate(180%) blur(40px);
+      -webkit-backdrop-filter: saturate(180%) blur(40px);
+      transition: transform 0.4s ease-out;
+    }
+    
+    /* Hardware noise texture applied as overlay */
+    .bento-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bento-card:hover { transform: scale(1.02); }
+
+    /* Gradients inside bento for depth */
+    .glow-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 10;
+    }
+    
+    /* Grid Positional Classes */
+    .span-12 { grid-column: span 12; min-height: 600px; }
+    .span-8  { grid-column: span 8;  min-height: 500px; }
+    .span-4  { grid-column: span 4;  min-height: 500px; }
+    .span-6  { grid-column: span 6;  min-height: 480px; }
+
+    /* Bento 1: Apple Intelligence */
+    .bento-ai {
+      justify-content: flex-start;
+      margin-top: 100px;
+    }
+    .bento-ai .glow-blob {
+      top: 40%; left: 50%; transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: conic-gradient(from 180deg at 50% 50%, #409CFF, #AF52DE, #FF2D55, #FF9500, #409CFF);
+      animation: spin 10s linear infinite;
+      opacity: 0.15;
+    }
+
+    @keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    /* Buttons Override for Page */
+    .btn-buy {
+      background: #fafafa;
+      color: #000;
+      border-radius: 20px;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL NAV -->
+  <nav class="apple-nav">
+    <span></span>
+    <span>Store</span>
+    <span>Mac</span>
+    <span>iPad</span>
+    <span>iPhone</span>
+    <span>Watch</span>
+    <span>Vision</span>
+    <span>AirPods</span>
+    <span>TV & Home</span>
+    <span>Entertainment</span>
+    <span>Support</span>
+  </nav>
+
+  <!-- LOCAL NAV -->
+  <nav class="local-nav">
+    <div class="local-nav-title">MacBook Neo</div>
+    <div>
+      <a href="#" class="btn-buy">Buy</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content reveal">
+      <h1 class="typography-hero hero-gradient-text">Hello, Neo.</h1>
+      <p class="hero-sub">The new MacBook Neo.</p>
+    </div>
+    
+    <!-- Stunning Hardware Showcase Placeholder (Using High Quality Unsplash Mac) -->
+    <div class="hero-device-wrapper reveal delay-1">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2526&auto=format&fit=crop" alt="MacBook Neo hardware" style="border-radius: 40px; max-width: 900px; margin-top: 60px;">
+    </div>
+  </section>
+
+  <!-- COLORS SECTION -->
+  <section class="section-colors">
+    <div class="reveal">
+      <h2 class="typography-super">Four stunning colours.<br>One durable design.</h2>
+      <p class="colors-sub">Designed from 100% recycled aluminium.</p>
+    </div>
+
+    <div class="color-showcase reveal delay-1">
+      <div class="color-node">
+        <div class="color-sphere sphere-silver"></div>
+        <div class="typography-body" style="color: #e8e8ed; font-weight: 500;">Silver</div>
+      </div>
+      <div class="color-node">
+        <div class="color-sphere sphere-blush"></div>
+        <div class="typography-body" style="color: #f9e5e3; font-weight: 500;">Blush</div>
+      </div>
+      <div class="color-node">
+        <div class="color-sphere sphere-citrus"></div>
+        <div class="typography-body" style="color: #fdf2d0; font-weight: 500;">Citrus</div>
+      </div>
+      <div class="color-node">
+        <div class="color-sphere sphere-indigo"></div>
+        <div class="typography-body" style="color: #a4b1ca; font-weight: 500;">Indigo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO GRID -->
+  <section class="section-bento">
+    <div class="bento-grid">
+      
+      <!-- AI / Apple Intelligence (Span 12) -->
+      <div class="bento-card span-12 bento-ai reveal">
+        <div class="glow-blob"></div>
+        <div class="card-content text-center" style="align-items: center; display: flex; flex-direction: column;">
+          <h3 class="typography-super hero-gradient-text" style="font-size: 80px; letter-spacing: -0.02em;">From to-do to ta-da.</h3>
+          <p class="typography-body" style="font-size: 24px; max-width: 600px; margin-top: 24px;">Built for <b>Apple Intelligence.</b> The AI apps and tools you use the most, like ChatGPT and Canva, run beautifully on MacBook Neo.</p>
+        </div>
+      </div>
+
+      <!-- Display -->
+      <div class="bento-card span-8 reveal">
+        <div class="glow-blob" style="background: rgba(90,200,250, 0.4); width: 400px; height: 400px; top: -100px; left: -100px;"></div>
+        <div class="card-content">
+          <h4 class="typography-headline" style="font-size: 40px; margin-bottom: 16px;">A feast for the senses.</h4>
+          <p class="typography-body" style="font-size: 20px; max-width: 400px; color: #a1a1a6;">33.0 cm (13″) Liquid Retina display with support for 1 billion colours. Photos pop with rich contrast.</p>
+        </div>
+      </div>
+
+      <!-- Performance/A18 -->
+      <div class="bento-card span-4 reveal delay-1">
+        <div class="glow-blob" style="background: rgba(255,59,48, 0.5); width: 300px; height: 300px; bottom: -50px; right: -50px;"></div>
+        <div class="card-content text-center" style="text-align: center;">
+          <h4 class="typography-hero" style="font-size: 72px;">A18<br>Pro</h4>
+          <p class="typography-body" style="margin-top: 16px;">Fly through everyday tasks.</p>
+        </div>
+      </div>
+
+      <!-- Audio/Camera -->
+      <div class="bento-card span-6 reveal">
+        <div class="card-content">
+          <h4 class="typography-headline" style="font-size: 32px; margin-bottom: 12px;">Spatial Audio.</h4>
+          <p class="typography-body">Dual side-firing speakers deliver immersive sound around you with Dolby Atmos.</p>
+        </div>
+      </div>
+
+      <div class="bento-card span-6 reveal delay-1">
+        <div class="card-content">
+          <h4 class="typography-headline" style="font-size: 32px; margin-bottom: 12px;">1080p FaceTime HD.</h4>
+          <p class="typography-body">Focus on your best self. Vibrant video even in low light environments.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // JS to trigger the CSS 'reveal' class on intersection
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

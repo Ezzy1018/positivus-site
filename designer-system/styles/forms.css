@@ -1,0 +1,84 @@
+/* --- iOS 16 Inputs & Forms --- */
+.ios-input-group {
+  background-color: var(--ios-bg-primary);
+  border-radius: var(--ios-radius);
+  overflow: hidden;
+  margin-bottom: var(--ios-spacing-md);
+}
+
+.ios-input-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 0.5px solid var(--ios-gray-4);
+  background-color: var(--ios-bg-primary);
+}
+
+.ios-input-row:last-child {
+  border-bottom: none;
+}
+
+.ios-label {
+  width: 100px;
+  font-size: var(--ios-size-body);
+  color: #000;
+  font-weight: var(--ios-weight-regular);
+}
+
+.ios-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: var(--ios-size-body);
+  color: #000;
+  font-family: inherit;
+  outline: none;
+}
+
+.ios-input::placeholder {
+  color: var(--ios-gray-3);
+}
+
+/* --- iOS 16 Toggle Switch --- */
+.ios-switch {
+  position: relative;
+  display: inline-block;
+  width: 51px;
+  height: 31px;
+}
+
+.ios-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ios-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--ios-gray-5);
+  transition: .3s;
+  border-radius: 31px;
+}
+
+.ios-switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 27px;
+  width: 27px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+input:checked + .ios-switch-slider {
+  background-color: var(--ios-green);
+}
+
+input:checked + .ios-switch-slider:before {
+  transform: translateX(20px);
+}

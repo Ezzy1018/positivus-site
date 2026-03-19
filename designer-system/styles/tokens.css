@@ -1,0 +1,67 @@
+/* --- iOS 16 DESIGN SYSTEM TOKENS --- */
+:root {
+  /* COLORS (iOS 16 Light Mode) */
+  --ios-blue: #007AFF;
+  --ios-green: #34C759;
+  --ios-indigo: #5856D6;
+  --ios-orange: #FF9500;
+  --ios-pink: #FF2D55;
+  --ios-purple: #AF52DE;
+  --ios-red: #FF3B30;
+  --ios-teal: #5AC8FA;
+  --ios-yellow: #FFCC00;
+
+  /* SYSTEM GRAYS */
+  --ios-gray: #8E8E93;
+  --ios-gray-2: #AEAEB2;
+  --ios-gray-3: #C7C7CC;
+  --ios-gray-4: #D1D1D6;
+  --ios-gray-5: #E5E5EA;
+  --ios-gray-6: #F2F2F7;
+
+  /* SYSTEM BACKGROUNDS */
+  --ios-bg-primary: #FFFFFF;
+  --ios-bg-secondary: #F2F2F7;
+  --ios-bg-tertiary: #FFFFFF;
+  --ios-fill-primary: #7878801f;
+  
+  /* TYPOGRAPHY SIZES (From Figma baseline) */
+  --ios-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  --ios-size-caption2: 11px;
+  --ios-size-caption1: 12px;
+  --ios-size-footnote: 13px;
+  --ios-size-subheadline: 15px;
+  --ios-size-callout: 16px;
+  --ios-size-body: 17px;
+  --ios-size-headline: 17px;
+  --ios-size-title3: 20px;
+  --ios-size-title2: 22px;
+  --ios-size-title1: 28px;
+  --ios-size-large-title: 34px;
+
+  /* TYPOGRAPHY WEIGHTS (From Figma baseline) */
+  --ios-weight-regular: 400;
+  --ios-weight-medium: 500;
+  --ios-weight-semibold: 600;
+  --ios-weight-bold: 700;
+
+  /* SPACING & CORNERS */
+  --ios-radius: 10px;
+  --ios-radius-lg: 16px;
+  --ios-spacing-xs: 4px;
+  --ios-spacing-sm: 8px;
+  --ios-spacing-md: 16px;
+  --ios-spacing-lg: 20px;
+  --ios-spacing-xl: 32px;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--ios-font-family);
+  background-color: var(--ios-bg-secondary);
+  color: #000;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}

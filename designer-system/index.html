@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS 16 Design System - Baseline elements</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/forms.css">
+  <style>
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    .section-title {
+      font-size: var(--ios-size-title2);
+      font-weight: 700;
+      margin-bottom: var(--ios-spacing-md);
+      color: var(--ios-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .tokens-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+    }
+    
+    .color-block {
+      background: var(--ios-bg-primary);
+      border-radius: var(--ios-radius);
+      padding: 12px;
+      text-align: center;
+      font-size: var(--ios-size-caption2);
+      font-weight: 600;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    
+    .color-swatch {
+      width: 100%;
+      height: 60px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    
+    .typography-list {
+      background: var(--ios-bg-primary);
+      padding: 24px;
+      border-radius: var(--ios-radius-lg);
+    }
+    
+    .type-sample {
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--ios-gray-5);
+      padding-bottom: 12px;
+    }
+    
+    .type-label {
+      font-size: var(--ios-size-caption2);
+      color: var(--ios-gray);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    
+    .component-set {
+      margin-top: 40px;
+    }
+    
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header style="margin-bottom: 40px;">
+      <h1 style="font-size: var(--ios-size-large-title); font-weight: 800; margin: 0;">iOS 16 Design System</h1>
+      <p style="color: var(--ios-gray); font-size: var(--ios-size-body); margin-top: 8px;">Baseline elements fetched from Figma iOS 16 UI Kit.</p>
+    </header>
+
+    <!-- TOKENS: COLORS -->
+    <section class="component-set">
+      <h2 class="section-title">Color Tokens</h2>
+      <div class="tokens-grid">
+        <div class="color-block">
+          <div class="color-swatch" style="background: var(--ios-blue);"></div>
+          Blue
+        </div>
+        <div class="color-block">
+          <div class="color-swatch" style="background: var(--ios-green);"></div>
+          Green
+        </div>
+        <div class="color-block">
+          <div class="color-swatch" style="background: var(--ios-red);"></div>
+          Red
+        </div>
+        <div class="color-block">
+          <div class="color-swatch" style="background: var(--ios-orange);"></div>
+          Orange
+        </div>
+        <div class="color-block">
+          <div class="color-swatch" style="background: var(--ios-gray);"></div>
+          Gray
+        </div>
+      </div>
+    </section>
+
+    <!-- TOKENS: TYPOGRAPHY -->
+    <section class="component-set">
+      <h2 class="section-title">Typography Scale</h2>
+      <div class="typography-list">
+        <div class="type-sample">
+          <div class="type-label">Large Title (34px)</div>
+          <div style="font-size: var(--ios-size-large-title); font-weight: 700;">Setting the standard</div>
+        </div>
+        <div class="type-sample">
+          <div class="type-label">Title 1 (28px)</div>
+          <div style="font-size: var(--ios-size-title1); font-weight: 600;">Main Header Text</div>
+        </div>
+        <div class="type-sample">
+          <div class="type-label">Body (17px)</div>
+          <div style="font-size: var(--ios-size-body);">The primary font size for long-form content and user-facing copy.</div>
+        </div>
+        <div class="type-sample">
+          <div class="type-label">Footnote (13px)</div>
+          <div style="font-size: var(--ios-size-footnote); color: var(--ios-gray);">Used for descriptions, help text, and secondary meta-data.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section class="component-set">
+      <h2 class="section-title">Button Components</h2>
+      <div class="button-row">
+        <button class="ios-btn ios-btn-filled">Submit</button>
+        <button class="ios-btn ios-btn-tinted">Add To Wallet</button>
+        <button class="ios-btn ios-btn-gray">Settings</button>
+        <button class="ios-btn ios-btn-plain">Learn More</button>
+      </div>
+    </section>
+
+    <section class="component-set">
+      <h2 class="section-title">List Row System</h2>
+      <div class="ios-card" style="padding: 0; overflow: hidden;">
+        <div class="ios-row">
+          <div class="ios-row-content">
+            <span class="ios-row-label">Wi-Fi</span>
+            <span class="ios-row-desc">Connected: Private 5G</span>
+          </div>
+          <div class="ios-row-chevron"></div>
+        </div>
+        <div class="ios-row">
+          <div class="ios-row-content">
+            <span class="ios-row-label">Bluetooth</span>
+            <span class="ios-row-desc">On</span>
+          </div>
+          <div class="ios-row-chevron"></div>
+        </div>
+        <div class="ios-row">
+          <div class="ios-row-content">
+            <span class="ios-row-label">Control Center</span>
+          </div>
+          <div class="ios-row-chevron"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="component-set">
+      <h2 class="section-title">Forms & Inputs</h2>
+      <div class="ios-input-group">
+        <label class="ios-input-row">
+          <span class="ios-label">Name</span>
+          <input type="text" class="ios-input" placeholder="Required" value="John Doe">
+        </label>
+        <label class="ios-input-row">
+          <span class="ios-label">Email</span>
+          <input type="email" class="ios-input" placeholder="example@icloud.com">
+        </label>
+      </div>
+      
+      <div class="ios-card" style="padding: 0; overflow: hidden; margin-top: 20px;">
+        <label class="ios-row">
+          <div class="ios-row-content">
+            <span class="ios-row-label">Reduce Motion</span>
+          </div>
+          <div class="ios-switch">
+            <input type="checkbox">
+            <span class="ios-switch-slider"></span>
+          </div>
+        </label>
+        <label class="ios-row">
+          <div class="ios-row-content">
+            <span class="ios-row-label">Dark Mode</span>
+          </div>
+          <div class="ios-switch">
+            <input type="checkbox" checked>
+            <span class="ios-switch-slider"></span>
+          </div>
+        </label>
+      </div>
+    </section>
+
+    <!-- NEW RECOMMENDED COMPONENTS -->
+    <section class="component-set" style="margin-top: 60px; border-top: 2px dashed var(--ios-gray-4); padding-top: 40px;">
+       <h2 class="section-title">Designer Recommendation: Segmented Control</h2>
+       <div style="display: flex; background: var(--ios-gray-5); border-radius: var(--ios-radius); padding: 2px; margin-bottom: 20px;">
+          <div style="flex: 1; padding: 6px; text-align: center; background: white; border-radius: calc(var(--ios-radius) - 2px); box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 13px; font-weight: 600;">Standard</div>
+          <div style="flex: 1; padding: 6px; text-align: center; font-size: 13px;">Advanced</div>
+          <div style="flex: 1; padding: 6px; text-align: center; font-size: 13px;">Expert</div>
+       </div>
+       <p style="font-size: var(--ios-size-footnote); color: var(--ios-gray);">Segmented controls help users switch between views without changing context.</p>
+    </section>
+
+  </div>
+</body>
+</html>
