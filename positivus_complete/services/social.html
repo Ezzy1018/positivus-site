@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Marketing — Positivus</title>
+    <meta name="description" content="Organic social strategy, creative production, paid social, and community management by Positivus.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 0C8.4 0 3 5.4 3 12L0 12L6 21L12 12L9 12C9 8.7 11.7 6 15 6C18.3 6 21 8.7 21 12C21 15.3 18.3 18 15 18V24C21.6 24 27 18.6 27 12C27 5.4 21.6 0 15 0Z' fill='%23191A23'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .breadcrumb { padding: 30px 0 10px; font-size: 16px; font-weight: 500; }
+        .breadcrumb a { color: #666; text-decoration: none; }
+        .breadcrumb span { margin: 0 10px; color: var(--dark); }
+        .detail-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; padding: 40px 0; }
+        .detail-body h3 { font-size: 28px; margin: 40px 0 20px; display: block; padding: 0; background: none; font-weight: 600; }
+        .detail-body p { font-size: 18px; margin-bottom: 20px; line-height: 1.6; }
+        .pain-list, .deliverables-list { list-style: none; margin-bottom: 30px; }
+        .pain-list li, .deliverables-list li { font-size: 18px; padding-left: 30px; position: relative; margin-bottom: 15px; line-height: 1.5; }
+        .pain-list li::before { content: "✕"; color: red; position: absolute; left: 0; font-weight: bold; }
+        .deliverables-list li::before { content: "✓"; color: var(--green); position: absolute; left: 0; font-weight: bold; background: var(--dark); border-radius: 50%; width: 20px; height: 20px; display: inline-flex; justify-content: center; align-items: center; font-size: 12px; }
+        .detail-sidebar { border: var(--border-dark); border-radius: var(--radius-md); box-shadow: var(--shadow-dark); padding: 40px 30px; background: var(--gray); height: fit-content; }
+        .sidebar-stat { margin-bottom: 40px; }
+        .sidebar-stat .num { font-size: 48px; font-weight: 700; background: var(--green); border: var(--border-dark); padding: 2px 10px; border-radius: 4px; display: inline-block; }
+        .sidebar-stat h4 { font-size: 20px; margin-top: 15px; }
+        .tools-list { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+        .tool-badge { border: var(--border-dark); padding: 6px 15px; border-radius: 20px; background: var(--white); font-weight: 500; font-size: 16px; }
+        .faq-section { margin-top: 60px; }
+        .cta-band { background: var(--green); border-radius: var(--radius-lg); border: var(--border-dark); box-shadow: var(--shadow-dark); padding: 60px 80px; display: flex; justify-content: space-between; align-items: center; margin-top: 80px; }
+        .cta-band-text { max-width: 600px; }
+        .cta-band-text h3 { font-size: 36px; margin-bottom: 15px; background: var(--white); display: inline-block; border-radius: 6px; border: var(--border-dark); padding: 5px 10px; }
+        @media(max-width: 900px) {
+            .detail-grid { grid-template-columns: 1fr; }
+            .cta-band { flex-direction: column; text-align: center; gap: 30px; padding: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="container nav">
+        <div class="nav-logo">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 0C8.4 0 3 5.4 3 12L0 12L6 21L12 12L9 12C9 8.7 11.7 6 15 6C18.3 6 21 8.7 21 12C21 15.3 18.3 18 15 18V24C21.6 24 27 18.6 27 12C27 5.4 21.6 0 15 0Z" fill="#191A23"/>
+            </svg>
+            <a href="../index.html" style="text-decoration:none; color:var(--dark);">Positivus</a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links">
+            <a href="../about.html">About us</a>
+            <a href="../services.html">Services</a>
+            <a href="../use-cases.html">Use Cases</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../index.html#contact-form" class="btn btn-outline">Request a quote</a>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container breadcrumb">
+        <a href="../services.html">Services</a> <span>›</span> Social Media Marketing
+    </div>
+
+    <!-- Hero -->
+    <main class="container hero">
+        <div class="hero-content">
+            <h1>Build Authority & Capture Mindshare</h1>
+            <p class="hero-desc">Build an active, authentic presence on channels where your target customers research, network, and consume content.</p>
+            <a href="../index.html#contact-form" class="btn btn-dark">Request Social Strategy</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2070&auto=format&fit=crop" class="hero-img" alt="Social media marketing illustration">
+        </div>
+    </main>
+
+    <!-- Detail Grid -->
+    <section class="container detail-grid">
+        <div class="detail-body reveal-on-scroll">
+            <h3>The Problem We Solve</h3>
+            <ul class="pain-list">
+                <li><strong>Invisible / Flat Organic Reach:</strong> Writing content that no one reads. Algorithms are penalizing standard corporate broadcast updates.</li>
+                <li><strong>High Cost/Low Lead Paid Social:</strong> Running display ads that generate broad clicks but never convert to sales qualified pipeline.</li>
+                <li><strong>No Brand Distinction:</strong> Sounding like every other agency. Corporate content lacks the authority and style to command attention.</li>
+            </ul>
+
+            <h3>What's Included (Deliverables)</h3>
+            <ul class="deliverables-list">
+                <li><strong>Social Media Strategy:</strong> Defining your voice, channel mix, asset templates, and audience metrics.</li>
+                <li><strong>Content Calendar & Design:</strong> Designing static grids, carousels, and writing copy for continuous updates.</li>
+                <li><strong>Paid Social Campaigns:</strong> Setting up acquisition and retargeting ads across LinkedIn, Meta, and Twitter.</li>
+                <li><strong>Community Engagement:</strong> Daily active community monitoring, direct response management, and brand conversations.</li>
+                <li><strong>Influencer & Partner Relations:</strong> Securing collaborative posts, guest columns, and expert co-creation.</li>
+                <li><strong>Social Attribution Dashboards:</strong> Tracking social clicks down the funnel to closed conversions.</li>
+            </ul>
+
+            <h3>Our Methodology</h3>
+            <div class="process-list" style="margin-top:20px;">
+                <div class="process-card pc-active">
+                    <div class="process-header">
+                        <div class="process-title-group"><span class="process-num">01</span><h4>Brand Positioning Design</h4></div>
+                    </div>
+                    <div class="process-body" style="display:block;"><p>We define your brand's unique narrative hook and format rules to stand out in the feed.</p></div>
+                </div>
+                <div class="process-card">
+                    <div class="process-header" onclick="this.parentElement.classList.toggle('pc-active')">
+                        <div class="process-title-group"><span class="process-num">02</span><h4>Matrix Content Calendar</h4></div>
+                        <div class="process-icon"></div>
+                    </div>
+                    <div class="process-body"><p>We build out a continuous content schedule balancing thought leadership, company news, and paid acquisition campaigns.</p></div>
+                </div>
+                <div class="process-card">
+                    <div class="process-header" onclick="this.parentElement.classList.toggle('pc-active')">
+                        <div class="process-title-group"><span class="process-num">03</span><h4>Monitor & Adapt</h4></div>
+                        <div class="process-icon"></div>
+                    </div>
+                    <div class="process-body"><p>We look at shares, comments, and conversion paths to double-down on highest leverage formats.</p></div>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h3>Frequently Asked Questions</h3>
+                <div class="process-list" style="margin-top:20px;">
+                    <div class="process-card">
+                        <div class="process-header" onclick="this.parentElement.classList.toggle('pc-active')">
+                            <div class="process-title-group"><h4>Which social channels do you specialize in?</h4></div>
+                            <div class="process-icon"></div>
+                        </div>
+                        <div class="process-body"><p>We manage campaigns across LinkedIn (for B2B/corporate authority), Instagram & TikTok (for visual/B2C branding), and Facebook/X (for community reach).</p></div>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-header" onclick="this.parentElement.classList.toggle('pc-active')">
+                            <div class="process-title-group"><h4>Do you respond to customer comments?</h4></div>
+                            <div class="process-icon"></div>
+                        </div>
+                        <div class="process-body"><p>Yes, we handle day-to-day community monitoring and reply to common queries based on an approved guidelines handbook.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-sidebar reveal-on-scroll stats-trigger">
+            <h3>Expected Outcomes</h3>
+            <div class="sidebar-stat" style="margin-top: 20px;">
+                <span class="num count-number" data-target="35" data-suffix="%">+0%</span>
+                <h4>Audience Growth Rate</h4>
+                <p>Average growth in channel reach and active engagement metrics within 90 days.</p>
+            </div>
+
+            <h3>Supported Channels</h3>
+            <div class="tools-list">
+                <span class="tool-badge">LinkedIn</span>
+                <span class="tool-badge">Instagram</span>
+                <span class="tool-badge">TikTok</span>
+                <span class="tool-badge">X (Twitter)</span>
+                <span class="tool-badge">Facebook</span>
+                <span class="tool-badge">Meta Ads</span>
+            </div>
+
+            <h3>Case Study</h3>
+            <div style="border-top:1px solid #ccc; padding-top:20px;">
+                <p><strong>National Retail Chain</strong></p>
+                <p style="font-size:16px; margin: 10px 0;">Created short-form vertical video strategies and structured acquisition campaigns.</p>
+                <p style="font-size:24px; font-weight:700; color:var(--dark);">+25% Followers</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="container reveal-on-scroll" style="margin-bottom: 80px;">
+        <div class="cta-band">
+            <div class="cta-band-text">
+                <h3>Build your brand authority</h3>
+                <p>Get a custom social media strategy proposal outlining visual assets and content schedule frameworks.</p>
+            </div>
+            <a href="../index.html#contact-form" class="btn btn-dark">Get strategy draft</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container footer reveal-on-scroll">
+        <div class="footer-nav">
+            <div class="f-logo">
+                <svg width="25" height="25" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 0C8.4 0 3 5.4 3 12L0 12L6 21L12 12L9 12C9 8.7 11.7 6 15 6C18.3 6 21 8.7 21 12C21 15.3 18.3 18 15 18V24C21.6 24 27 18.6 27 12C27 5.4 21.6 0 15 0Z"/>
+                </svg>
+                Positivus
+            </div>
+            <div class="f-links">
+                <a href="../about.html">About us</a>
+                <a href="../services.html">Services</a>
+                <a href="../use-cases.html">Use Cases</a>
+                <a href="../pricing.html">Pricing</a>
+            </div>
+            <div class="f-socials">
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="color:var(--white);"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter" style="color:var(--white);"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook" style="color:var(--white);"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
+            </div>
+        </div>
+
+        <div class="footer-middle">
+            <div class="f-contact">
+                <h4>Contact us:</h4>
+                <p>Email: <a href="mailto:hello@positivusagency.com" style="color:var(--white); text-decoration:none;">hello@positivusagency.com</a></p>
+                <p>Phone: +1 (555) 901-2345</p>
+                <p>Address: 123 Creative Way, Suite 400<br>New York, NY 10001</p>
+            </div>
+            <div class="f-subscribe">
+                <form id="subscribe-form" onsubmit="return handleSubscribeSubmit(event)" style="display:flex; gap:20px; width:100%; align-items:center;">
+                    <input type="email" class="f-input" placeholder="Email" required>
+                    <button type="submit" class="btn btn-green">Subscribe to news</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Positivus. All Rights Reserved.</p>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script src="../js/motion.js"></script>
+    <script>
+        function handleSubscribeSubmit(e) {
+            e.preventDefault();
+            var form = e.target;
+            var button = form.querySelector('button');
+            var input = form.querySelector('input');
+            button.disabled = true;
+            button.innerText = 'Subscribing...';
+            setTimeout(function() {
+                button.innerText = 'Subscribed!';
+                button.style.backgroundColor = 'var(--white)';
+                button.style.color = 'var(--dark)';
+                input.value = '';
+                input.disabled = true;
+                input.placeholder = 'Thank you!';
+            }, 1000);
+            return false;
+        }
+    </script>
+</body>
+</html>

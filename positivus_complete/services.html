@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Overview — Positivus</title>
+    <meta name="description" content="Explore Positivus' growth marketing services: SEO, PPC, Social Media, Email, Content, and Analytics.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 0C8.4 0 3 5.4 3 12L0 12L6 21L12 12L9 12C9 8.7 11.7 6 15 6C18.3 6 21 8.7 21 12C21 15.3 18.3 18 15 18V24C21.6 24 27 18.6 27 12C27 5.4 21.6 0 15 0Z' fill='%23191A23'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Specific Styles for Services page */
+        .services-intro { padding: 40px 0; text-align: center; max-width: 800px; margin: 0 auto; }
+        .services-intro p { font-size: 24px; line-height: 1.4; color: var(--dark); font-weight: 500; }
+        .how-we-work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
+        .how-card { border: var(--border-dark); border-radius: var(--radius-md); box-shadow: var(--shadow-dark); padding: 30px; background: var(--gray); text-align: left; }
+        .how-num { font-size: 32px; font-weight: 700; background: var(--green); color: var(--dark); display: inline-block; padding: 2px 10px; border-radius: 4px; margin-bottom: 20px; border: var(--border-dark); }
+        .how-card h4 { font-size: 22px; margin-bottom: 12px; font-weight: 600; }
+        .why-us-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .why-card { border: var(--border-dark); border-radius: var(--radius-md); box-shadow: var(--shadow-dark); padding: 45px 30px; text-align: center; }
+        .why-card .metric { font-size: 56px; font-weight: 700; color: var(--dark); background: var(--green); display: inline-block; padding: 2px 15px; border-radius: 6px; border: var(--border-dark); margin-bottom: 20px; }
+        .why-card h4 { font-size: 20px; margin-bottom: 10px; }
+        .cta-band { background: var(--gray); border-radius: var(--radius-lg); border: var(--border-dark); box-shadow: var(--shadow-dark); padding: 60px 80px; display: flex; justify-content: space-between; align-items: center; margin-top: 80px; }
+        .cta-band-text { max-width: 600px; }
+        .cta-band-text h3 { font-size: 36px; margin-bottom: 15px; background: var(--green); display: inline-block; border-radius: 6px; border: var(--border-dark); }
+        @media(max-width: 900px) {
+            .how-we-work-grid, .why-us-grid { grid-template-columns: 1fr; }
+            .cta-band { flex-direction: column; text-align: center; gap: 30px; padding: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="container nav">
+        <div class="nav-logo">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 0C8.4 0 3 5.4 3 12L0 12L6 21L12 12L9 12C9 8.7 11.7 6 15 6C18.3 6 21 8.7 21 12C21 15.3 18.3 18 15 18V24C21.6 24 27 18.6 27 12C27 5.4 21.6 0 15 0Z" fill="#191A23"/>
+            </svg>
+            <a href="index.html" style="text-decoration:none; color:var(--dark);">Positivus</a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links">
+            <a href="about.html">About us</a>
+            <a href="services.html">Services</a>
+            <a href="use-cases.html">Use Cases</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#contact-form" class="btn btn-outline">Request a quote</a>
+        </nav>
+    </header>
+
+    <!-- Services Hero -->
+    <main class="container hero">
+        <div class="hero-content">
+            <h1>Services That Drive Real Growth</h1>
+            <p class="hero-desc">We combine strategic search, paid media, content, and deep analytics to position your business in front of the right buyers. No fluff, just measurable pipeline.</p>
+            <div style="display:flex; gap:15px;">
+                <a href="index.html#contact-form" class="btn btn-dark">Book a consultation</a>
+                <a href="pricing.html" class="btn btn-outline">View Pricing</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" class="hero-img" alt="Growth services illustration">
+        </div>
+    </main>
+
+    <!-- Services Intro -->
+    <section class="container services-intro reveal-on-scroll">
+        <p>"Digital marketing isn't about being everywhere; it's about being where it counts. We partner with growth-minded businesses to design custom marketing systems that capture intent, convert visitors, and drive revenue."</p>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="container section reveal-on-scroll">
+        <div class="section-header">
+            <h2>Our Core Services</h2>
+            <p>We provide full-funnel digital marketing services tailored to scale your customer acquisition</p>
+        </div>
+        <div class="services-grid">
+            <!-- SEO -->
+            <a href="services/seo.html" class="service-card sc-gray stagger-item">
+                <div class="service-text">
+                    <div class="service-title">
+                        <h3><span class="title-bg-green">Search engine</span></h3>
+                        <h3><span class="title-bg-green">optimization</span></h3>
+                    </div>
+                    <span class="learn-more"><div class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div> Learn more</span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1572177812156-58036aae439c?q=80&w=300&auto=format&fit=crop" width="180" class="service-img" alt="Search engine optimization">
+            </a>
+
+            <!-- PPC -->
+            <a href="services/ppc.html" class="service-card sc-green stagger-item">
+                <div class="service-text">
+                    <div class="service-title">
+                        <h3><span class="title-bg-white">Pay-per-click</span></h3>
+                        <h3><span class="title-bg-white">advertising</span></h3>
+                    </div>
+                    <span class="learn-more"><div class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div> Learn more</span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=300&auto=format&fit=crop" width="180" class="service-img" alt="Pay-per-click advertising">
+            </a>
+
+            <!-- Social Media -->
+            <a href="services/social.html" class="service-card sc-dark stagger-item">
+                <div class="service-text">
+                    <div class="service-title">
+                        <h3><span class="title-bg-white">Social Media</span></h3>
+                        <h3><span class="title-bg-white">Marketing</span></h3>
+                    </div>
+                    <span class="learn-more"><div class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div> Learn more</span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=300&auto=format&fit=crop" width="180" class="service-img service-img-light" alt="Social media marketing">
+            </a>
+
+            <!-- Email Marketing -->
+            <a href="services/email.html" class="service-card sc-gray stagger-item">
+                <div class="service-text">
+                    <div class="service-title">
+                        <h3><span class="title-bg-green">Email</span></h3>
+                        <h3><span class="title-bg-green">Marketing</span></h3>
+                    </div>
+                    <span class="learn-more"><div class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div> Learn more</span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?q=80&w=300&auto=format&fit=crop" width="180" class="service-img" alt="Email marketing">
+            </a>
+
+            <!-- Content Creation -->
+            <a href="services/content.html" class="service-card sc-green stagger-item">
+                <div class="service-text">
+                    <div class="service-title">
+                        <h3><span class="title-bg-white">Content</span></h3>
+                        <h3><span class="title-bg-white">Creation</span></h3>
+                    </div>
+                    <span class="learn-more"><div class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div> Learn more</span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=300&auto=format&fit=crop" width="180" class="service-img" alt="Content creation">
+            </a>
+
+            <!-- Analytics -->
+            <a href="services/analytics.html" class="service-card sc-dark stagger-item">
+                <div class="service-text">
+                    <div class="service-title">
+                        <h3><span class="title-bg-white">Analytics and</span></h3>
+                        <h3><span class="title-bg-white">Tracking</span></h3>
+                    </div>
+                    <span class="learn-more"><div class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div> Learn more</span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=300&auto=format&fit=crop" width="180" class="service-img service-img-light" alt="Analytics and tracking">
+            </a>
+        </div>
+    </section>
+
+    <!-- How We Work Mini Process -->
+    <section class="container section reveal-on-scroll">
+        <div class="section-header">
+            <h2>How We Work</h2>
+            <p>Our structured methodology ensures alignment and transparent execution</p>
+        </div>
+        <div class="how-we-work-grid">
+            <div class="how-card stagger-item">
+                <span class="how-num">01</span>
+                <h4>Discover & Audit</h4>
+                <p>We analyze your business operations, campaign history, and competitor footprints to identify immediate revenue opportunities.</p>
+            </div>
+            <div class="how-card stagger-item">
+                <span class="how-num">02</span>
+                <h4>Strategy Design</h4>
+                <p>We build a custom acquisition roadmap defining target keywords, creative themes, and explicit pipeline objectives.</p>
+            </div>
+            <div class="how-card stagger-item">
+                <span class="how-num">03</span>
+                <h4>Execute & Optimize</h4>
+                <p>We launch campaigns rapidly, test assets in real time, and report back weekly with clear performance modifications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Metrics -->
+    <section class="container section reveal-on-scroll stats-trigger">
+        <div class="section-header">
+            <h2>Why Choose Positivus</h2>
+            <p>We focus on metrics that matter: customer acquisition cost and business revenue</p>
+        </div>
+        <div class="why-us-grid">
+            <div class="why-card sc-gray stagger-item">
+                <span class="metric count-number" data-target="100" data-suffix="%">0%</span>
+                <h4>Transparent Data</h4>
+                <p>No opaque PDFs. You get full access to custom Looker Studio dashboards tracking live performance metrics.</p>
+            </div>
+            <div class="why-card sc-gray stagger-item">
+                <span class="metric count-number" data-target="10" data-suffix=" Days">0 Days</span>
+                <h4>Speed to Market</h4>
+                <p>We launch strategy iterations, search setups, and landing page campaigns in days rather than quarters.</p>
+            </div>
+            <div class="why-card sc-gray stagger-item">
+                <span class="metric count-number" data-target="3" data-suffix="x avg">0x avg</span>
+                <h4>Revenue First Focus</h4>
+                <p>We align tracking to sales pipeline value rather than clicks, impressions, and simple CTR variables.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="container reveal-on-scroll" style="margin-bottom: 80px;">
+        <div class="cta-band">
+            <div class="cta-band-text">
+                <h3>Ready to scale your traffic?</h3>
+                <p>Let's map out a customized digital marketing roadmap for your business. Free audit included.</p>
+            </div>
+            <a href="index.html#contact-form" class="btn btn-dark">Book your free call</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container footer reveal-on-scroll">
+        <div class="footer-nav">
+            <div class="f-logo">
+                <svg width="25" height="25" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 0C8.4 0 3 5.4 3 12L0 12L6 21L12 12L9 12C9 8.7 11.7 6 15 6C18.3 6 21 8.7 21 12C21 15.3 18.3 18 15 18V24C21.6 24 27 18.6 27 12C27 5.4 21.6 0 15 0Z"/>
+                </svg>
+                Positivus
+            </div>
+            <div class="f-links">
+                <a href="about.html">About us</a>
+                <a href="services.html">Services</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div class="f-socials">
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="color:var(--white);"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter" style="color:var(--white);"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook" style="color:var(--white);"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
+            </div>
+        </div>
+
+        <div class="footer-middle">
+            <div class="f-contact">
+                <h4>Contact us:</h4>
+                <p>Email: <a href="mailto:hello@positivusagency.com" style="color:var(--white); text-decoration:none;">hello@positivusagency.com</a></p>
+                <p>Phone: +1 (555) 901-2345</p>
+                <p>Address: 123 Creative Way, Suite 400<br>New York, NY 10001</p>
+            </div>
+            <div class="f-subscribe">
+                <form id="subscribe-form" onsubmit="return handleSubscribeSubmit(event)" style="display:flex; gap:20px; width:100%; align-items:center;">
+                    <input type="email" class="f-input" placeholder="Email" required>
+                    <button type="submit" class="btn btn-green">Subscribe to news</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Positivus. All Rights Reserved.</p>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script src="js/motion.js"></script>
+    <script>
+        // Header active states / nav link update
+        const currentPath = window.location.pathname.split('/').pop();
+        document.querySelectorAll('.nav-links a, .f-links a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPath) {
+                link.style.fontWeight = 'bold';
+                if (link.parentElement.classList.contains('nav-links')) {
+                    link.style.borderBottom = '2px solid var(--green)';
+                }
+            }
+        });
+
+        function handleSubscribeSubmit(e) {
+            e.preventDefault();
+            var form = e.target;
+            var button = form.querySelector('button');
+            var input = form.querySelector('input');
+            
+            button.disabled = true;
+            button.innerText = 'Subscribing...';
+
+            setTimeout(function() {
+                button.innerText = 'Subscribed!';
+                button.style.backgroundColor = 'var(--white)';
+                button.style.color = 'var(--dark)';
+                input.value = '';
+                input.disabled = true;
+                input.placeholder = 'Thank you!';
+            }, 1000);
+
+            return false;
+        }
+    </script>
+</body>
+</html>
